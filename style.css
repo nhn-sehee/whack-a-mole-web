@@ -1,0 +1,44 @@
+body { margin:0; font-family: sans-serif; }
+#score { text-align:center; font-size:24px; margin-top:20px; }
+#level { text-align:center; font-size:20px; margin-top:10px; }
+
+/* start screen overlay */
+#start-screen {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+#start-screen button {
+  padding: 10px 20px;
+  font-size:18px;
+  margin-top:20px;
+}
+#game-container { position: relative; width: 600px; height: 400px; margin: 50px auto; background: white; }
+#game-container.flipped { transform: rotate(180deg); transition: transform 0.5s ease; }
+/* you can download your mole artwork (e.g. the attached picture) into this folder as mole.png */
+.mole {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  /* use an image file named mole.png for the mole graphic */
+  background: url('mole.png') center/contain no-repeat;
+  cursor: pointer;
+}
+
+/* bomb mole style */
+.bomb {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  /* bomb graphic (fallback to red circle if image missing) */
+  background: url('bomb.png') center/contain no-repeat;
+  background-color: red; /* visible even if bomb.png not found */
+  border-radius: 50%;
+  cursor: pointer;
+}
